@@ -3,7 +3,7 @@
   <div class="rcp-flex rcp-items-start rcp-gap-4">
     <div class="rcp-w-[140px] rcp-flex-shrink-0">
       <img
-        src="{{ image | default: 'https://via.placeholder.com/100' }}"
+        src="{{ image | default: 'elementor-placeholder-image.png' | asset_url }}"
         alt="{{ title | default: 'Light Roast K-Cup' }}"
         class="rcp-w-full rcp-aspect-square rcp-rounded-lg rcp-object-cover rcp-bg-gray-100"
       >
@@ -27,12 +27,12 @@
 <div class="md:rcp-hidden rcp-flex rcp-gap-4 rcp-items-start">
   <div class="rcp-w-[140px] rcp-flex-shrink-0">
     <img
-      src="{{ image | default: 'https://via.placeholder.com/100' }}"
+      src="{{ image | default: 'elementor-placeholder-image.png' | asset_url }}"
       alt="{{ title | default: 'Light Roast K-Cup' }}"
       class="rcp-w-full rcp-aspect-square rcp-rounded-lg rcp-object-cover rcp-bg-gray-100"
     >
   </div>
-  <div class="rcp-flex rcp-flex-col rcp-gap-0.5 rcp-justify-between rcp-h-[140px]">
+  <div class="rcp-flex rcp-flex-col rcp-gap-0.5 rcp-justify-between">
     <div>
       <span class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-120 rcp-capitalize rcp-text-primary-base">{{ title | default: 'Light Roast K-Cup' }}</span>
     </div>
