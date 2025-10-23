@@ -4,7 +4,7 @@
     grid-template-columns: 1fr;
     gap: 0.5rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .order-header-grid {
         grid-template-columns: 1fr 1fr 1fr;
         align-items: center;
@@ -13,17 +13,14 @@
 </style>
 
 <div class="order-header-grid">
-    <div class="rcp-flex rcp-items-center rcp-gap-2">
-        {% render 'icon', icon: 'arrow-left' %}
-        <p class="rcp-font-hanleyPro rcp-font-bold rcp-uppercase rcp-text-lg rcp-text-primary-base">return to orders</p>
-    </div>
-    <h2 class="rcp-font-hanleyBlock rcp-mt-2 md:rcp-mt-0 rcp-font-normal rcp-text-[44px] rcp-leading-[68px] rcp-text-center rcp-lowercase rcp-text-primary-base">order #cc532097</h2>
+    {% render 'button-back' %}
+    <h2 class="rcp-font-hanleyBlock rcp-mt-2 lg:rcp-mt-0 rcp-font-normal rcp-text-[44px] rcp-leading-[68px] rcp-text-center rcp-lowercase rcp-text-primary-base">order #cc532097</h2>
     <div></div>
 </div>
 
 <span class="rcp-font-hanleyProSans rcp-font-bold rcp-text-base rcp-leading-6 rcp-tracking-widest rcp-uppercase rcp-text-primary-base">placed on july 28, 2025 AT 2:47 PM</span>
 <style>
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .order-grid-container {
         grid-template-columns: 2fr 1fr !important;
         align-items: stretch;
