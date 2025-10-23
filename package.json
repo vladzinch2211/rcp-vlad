@@ -17,7 +17,8 @@
     "prisma": "prisma",
     "graphql-codegen": "graphql-codegen",
     "vite": "vite",
-    "typecheck": "react-router typegen && tsc --noEmit"
+    "typecheck": "react-router typegen && tsc --noEmit",
+    "tailwind": "npx tailwindcss -i ./extensions/customer-portal-vlad-ext/assets/tailwind-input.css -o ./extensions/customer-portal-vlad-ext/assets/tailwind.css --watch"
   },
   "type": "module",
   "engines": {
@@ -56,6 +57,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "graphql-config": "^5.1.1",
     "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3",
     "vite": "^6.3.6"
   },

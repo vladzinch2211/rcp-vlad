@@ -5,7 +5,10 @@
 
 {{ 'tailwind.css' | asset_url | stylesheet_tag }}
 {{ 'splide.min.css' | asset_url | stylesheet_tag }}
-<div>test</div>
+
+<div style="margin: 20px 0 20px;">
+{% render 'order-detail-main-item'%}
+</div>
 <div id="recharge-portal" class="py-10">
   <!-- Authentication container -->
   <div
