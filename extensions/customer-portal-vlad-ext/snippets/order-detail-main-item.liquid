@@ -1,14 +1,14 @@
-<div class="rcp-bg-white rcp-py-11 rcp-px-11 rcp-rounded-lg rcp-shadow-[0_4px_48px_rgba(0,0,0,0.08)]">
+<div class="rcp-bg-white rcp-py-5 rcp-px-5 md:rcp-py-11 md:rcp-px-11 rcp-rounded-2xl rcp-shadow-[0_4px_48px_rgba(0,0,0,0.08)]">
   <!-- Header Row -->
   <div class="rcp-grid rcp-grid-cols-[2fr_1fr_1fr_1fr] rcp-gap-6 rcp-mb-6 rcp-items-center">
-    <div class="rcp-font-hanleyProSans rcp-font-normal rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase">Product</div>
-    <div class="rcp-font-hanleyProSans rcp-font-normal rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase rcp-text-center">Price</div>
-    <div class="rcp-font-hanleyProSans rcp-font-normal rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase rcp-text-center">Quantity</div>
-    <div class="rcp-font-hanleyProSans rcp-font-normal rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase rcp-text-center">Total</div>
+    <div class="rcp-font-hanleyProSans rcp-font-bold rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase">Product</div>
+    <div class="rcp-font-hanleyProSans rcp-font-bold rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase rcp-text-center rcp-hidden md:rcp-block">Price</div>
+    <div class="rcp-font-hanleyProSans rcp-font-bold rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase rcp-text-center rcp-hidden md:rcp-block">Quantity</div>
+    <div class="rcp-font-hanleyProSans rcp-font-bold rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase rcp-text-center rcp-hidden md:rcp-block">Total</div>
   </div>
 
   <!-- Product item -->
-  <div class="rcp-grid rcp-grid-cols-[2fr_1fr_1fr_1fr] rcp-gap-6 rcp-items-start">
+  <div class="rcp-hidden md:rcp-grid rcp-grid-cols-[2fr_1fr_1fr_1fr] rcp-gap-6 rcp-items-start">
     <div class="rcp-flex rcp-items-start rcp-gap-4">
       <img
         src="https://via.placeholder.com/100"
@@ -29,26 +29,61 @@
       $29.95 USD
     </div>
   </div>
+  <!-- Product item mobile -->
+  <div class="md:rcp-hidden rcp-flex rcp-gap-4 rcp-items-start">
+    <div class="rcp-flex-shrink-0">
+      <img
+        src="https://via.placeholder.com/100"
+        alt="Light Roast K-Cup"
+        class="rcp-w-[140px] rcp-h-[140px] rcp-rounded-lg rcp-object-cover rcp-bg-gray-100"
+      >
+    </div>
+    <div class="rcp-flex rcp-flex-col rcp-gap-2 rcp-justify-between rcp-h-[140px]">
+      <div>
+        <span class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-120 rcp-capitalize rcp-text-primary-base">Light Roast K-Cup</span>
+      </div>
+      <div class="rcp-flex rcp-flex-col rcp-gap-1">
+        <div>
+          <p class="rcp-font-hanleyProSans rcp-font-bold rcp-text-sm rcp-leading-tight rcp-tracking-widest rcp-uppercase rcp-text-primary-base rcp-mb-1">Price</p>
+          <span class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">$29.95</span>
+        </div>
+        <div>
+          <p class="rcp-font-hanleyProSans rcp-font-bold rcp-text-sm rcp-leading-tight rcp-tracking-widest rcp-uppercase rcp-text-primary-base rcp-mb-1">Quantity</p>
+          <span class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">01</span>
+        </div>
+      </div>
+    </div>
+  </div>
  <!-- Separator Line-->
   <hr style="border: none; border-top: 1px solid #3B6380; margin-top: 1.5rem;" />
 
   <!-- Total -->
   <div class="rcp-mt-8 rcp-flex rcp-justify-end">
-    <div class="rcp-flex rcp-flex-col rcp-gap-2 rcp-min-w-64">
+    <div class="rcp-flex rcp-flex-col rcp-gap-6 rcp-w-full md:rcp-w-[400px]">
       <!-- Subtotal -->
       <div class="rcp-flex rcp-justify-between rcp-items-center">
         <p class="rcp-text-sm rcp-uppercase rcp-font-bold rcp-text-primary-base rcp-tracking-wider">Subtotal</p>
-        <span class="rcp-text-base rcp-text-primary-base">$29.95 USD</span>
+        <span class="rcp-text-base rcp-text-primary-base rcp-text-right">$29.95 USD</span>
       </div>
       <!-- Tax -->
       <div class="rcp-flex rcp-justify-between rcp-items-center">
         <p class="rcp-text-sm rcp-uppercase rcp-font-bold rcp-text-primary-base rcp-tracking-wider">Tax</p>
-        <span class="rcp-text-base rcp-text-primary-base">$0.00 USD</span>
+        <span class="rcp-text-base rcp-text-primary-base rcp-text-right">$0.00 USD</span>
       </div>
       <!-- Total -->
       <div class="rcp-flex rcp-justify-between rcp-items-center">
         <p class="rcp-text-sm rcp-uppercase rcp-font-bold rcp-text-primary-base rcp-tracking-wider">Total</p>
-        <span class="rcp-text-base rcp-text-primary-base">$29.95 USD</span>
+        <span class="rcp-text-base rcp-text-primary-base rcp-text-right">$29.95 USD</span>
+      </div>
+         <!-- Payment status -->
+      <div class="rcp-flex rcp-justify-between rcp-items-center md:rcp-hidden">
+        <p class="rcp-text-sm rcp-uppercase rcp-font-bold rcp-text-primary-base rcp-tracking-wider">payment status</p>
+        <span class="rcp-text-base rcp-text-primary-base">Paid</span>
+      </div>
+        <!-- fulfillment status -->
+      <div class="rcp-flex rcp-justify-between rcp-items-center md:rcp-hidden">
+        <p class="rcp-text-sm rcp-uppercase rcp-font-bold rcp-text-primary-base rcp-tracking-wider">fulfillment status</p>
+        <span class="rcp-text-base rcp-text-primary-base">Unfulfilled</span>
       </div>
     </div>
   </div>
