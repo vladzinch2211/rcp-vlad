@@ -14,7 +14,7 @@
 
 <div class="order-header-grid">
     {% render 'button-back' %}
-    <h2 class="rcp-font-hanleyBlock rcp-mt-2 lg:rcp-mt-0 rcp-font-normal rcp-text-[44px] rcp-leading-[68px] rcp-text-center rcp-lowercase rcp-text-primary-base">order #cc532097</h2>
+    <h2 class="rcp-font-hanleyBlock rcp-mt-10 lg:rcp-mt-0 rcp-font-normal rcp-text-[44px] rcp-leading-[68px] rcp-text-center rcp-lowercase rcp-text-primary-base">order #cc532097</h2>
     <div></div>
 </div>
 
@@ -23,10 +23,12 @@
 @media (min-width: 1024px) {
     .order-grid-container {
         grid-template-columns: 2fr 1fr !important;
-        align-items: stretch;
+        align-items: start;
     }
     .order-grid-container > div {
         height: 100%;
+        display: flex;
+        flex-direction: column;
     }
 }
 </style>

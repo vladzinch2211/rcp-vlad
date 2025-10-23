@@ -7,55 +7,11 @@
     <div class="rcp-font-hanleyProSans rcp-font-bold rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase rcp-text-center rcp-hidden md:rcp-block">Total</div>
   </div>
 
-  <!-- Product item -->
-  <div class="rcp-hidden md:rcp-grid rcp-grid-cols-[2fr_1fr_1fr_1fr] rcp-gap-6 rcp-items-start">
-    <div class="rcp-flex rcp-items-start rcp-gap-4">
-      <img
-        src="https://via.placeholder.com/100"
-        alt="Light Roast K-Cup"
-        class="rcp-w-[140px] rcp-h-[140px] rcp-rounded-lg rcp-object-cover rcp-bg-gray-100"
-      >
-      <div class="rcp-flex rcp-flex-col">
-        <span class="rcp-font-gtAmerica rcp-font-medium rcp-text-lg rcp-leading-120 rcp-capitalize rcp-text-primary-base">Light Roast K-Cup</span>
-      </div>
-    </div>
-    <div class="rcp-font-gtAmerica rcp-font-normal rcp-text-lg rcp-leading-120 rcp-text-primary-base rcp-text-center">
-      $29.95
-    </div>
-    <div class="rcp-font-gtAmerica rcp-font-normal rcp-text-lg rcp-leading-120 rcp-text-primary-base rcp-text-center">
-      01
-    </div>
-    <div class="rcp-font-gtAmerica rcp-font-normal rcp-text-lg rcp-leading-120 rcp-text-primary-base rcp-text-right">
-      $29.95 USD
-    </div>
+  {% render 'order-product-item' %}
+
+  <div style="margin-top: 2.5rem; margin-bottom: 2.5rem;">
+    {% render 'separator-line' %}
   </div>
-  <!-- Product item mobile -->
-  <div class="md:rcp-hidden rcp-flex rcp-gap-4 rcp-items-start">
-    <div class="rcp-flex-shrink-0">
-      <img
-        src="https://via.placeholder.com/100"
-        alt="Light Roast K-Cup"
-        class="rcp-w-[140px] rcp-h-[140px] rcp-rounded-lg rcp-object-cover rcp-bg-gray-100"
-      >
-    </div>
-    <div class="rcp-flex rcp-flex-col rcp-gap-2 rcp-justify-between rcp-h-[140px]">
-      <div>
-        <span class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-120 rcp-capitalize rcp-text-primary-base">Light Roast K-Cup</span>
-      </div>
-      <div class="rcp-flex rcp-flex-col rcp-gap-1">
-        <div>
-          <p class="rcp-font-hanleyProSans rcp-font-bold rcp-text-sm rcp-leading-tight rcp-tracking-widest rcp-uppercase rcp-text-primary-base rcp-mb-1">Price</p>
-          <span class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">$29.95</span>
-        </div>
-        <div>
-          <p class="rcp-font-hanleyProSans rcp-font-bold rcp-text-sm rcp-leading-tight rcp-tracking-widest rcp-uppercase rcp-text-primary-base rcp-mb-1">Quantity</p>
-          <span class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">01</span>
-        </div>
-      </div>
-    </div>
-  </div>
- <!-- Separator Line-->
-  <hr style="border: none; border-top: 1px solid #3B6380; margin-top: 2.5rem; margin-bottom: 2.5rem;" />
 
   <!-- Total -->
   <div class="rcp-flex rcp-justify-end">
