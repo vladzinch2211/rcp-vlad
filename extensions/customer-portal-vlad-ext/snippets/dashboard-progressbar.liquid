@@ -1,0 +1,43 @@
+<script src="{{ 'dashboard-progressbar.js' | asset_url }}"></script>
+
+<!-- Simple Progress Bar -->
+<dashboard-progressbar
+  data-total-amount="{{ block.settings.progressbar_amount_total }}"
+  data-current-amount=""
+  style="--percent: 0%;"
+  class="rcp-block"
+>
+  <div class="rcp-mb-6 rcp-font-hanleyMonolineSans rcp-text-base rcp-font-normal rcp-uppercase rcp-leading-6 rcp-tracking-widest rcp-text-primary-base">
+    {{ 'blocks.progress_bar.title_html' | t: amount: amount }}
+  </div>
+
+  <div class="rcp-relative rcp-mt-5 rcp-h-5 rcp-w-full rcp-rounded-xl rcp-bg-white">
+    <div
+      class="
+        rcp-h-full
+        rcp-bg-gradient-to-r
+        rcp-from-primary-accent
+        rcp-to-primary-base
+        rcp-w-[var(--percent)]
+        rcp-rounded-tl-xl
+        rcp-rounded-bl-xl
+        rcp-relative
+        rcp-transition-all
+      "
+    >
+      <!-- Progress Icon -->
+      <div
+        class="
+          rcp-absolute
+          rcp-top-1/2
+          rcp-left-full
+          rcp-w-14
+          -rcp-translate-y-1/2
+          -rcp-translate-x-1/2
+        "
+      >
+        {{ 'dashboard-progressbar-icon.svg' | asset_url | img_tag: alt: 'Progress', class: 'rcp-w-full rcp-h-auto' }}
+      </div>
+    </div>
+  </div>
+</dashboard-progressbar>
