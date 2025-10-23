@@ -1,12 +1,12 @@
 <div class="rcp-bg-white rcp-py-5 rcp-px-5 md:rcp-py-11 md:rcp-px-11 rcp-rounded-2xl rcp-shadow-[0_4px_48px_rgba(0,0,0,0.08)] rcp-w-full">
     <div class="rcp-flex rcp-justify-between rcp-items-start">
-      <p class="rcp-font-hanleyProSans rcp-font-bold rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase">Billing Address</p>
+      <p class="rcp-font-hanleyProSans rcp-font-bold rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase">{{ title | default: 'Billing Address' }}</p>
       {% render 'button-edit' %}
     </div>
-    <div class="rcp-mt-4">
-      <p class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">John Doe</p>
-      <p class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">123 Main St.</p>
-      <p class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">City, State 01234</p>
-      <p class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">United States</p>
+    <div class="rcp-mt-2">
+      <p class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">{{ name | default: 'John Doe' }}</p>
+      <p class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">{{ street | default: '123 Main St.' }}</p>
+      <p class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">{{ city | default: 'City, State 01234' }}</p>
+      <p class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">{{ country | default: 'United States' }}</p>
     </div>
 </div>

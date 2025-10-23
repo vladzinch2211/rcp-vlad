@@ -1,13 +1,45 @@
-<div>arrow</div>
-<p>return to orders</p>
-<h2 class="rcp-font-hanleyProBlock rcp-font-normal rcp-text-[44px] rcp-leading-[68px] rcp-text-center rcp-lowercase rcp-text-primary-base">order #cc532097</h2>
-<span class="rcp-font-hanleyProSans rcp-font-normal rcp-text-base rcp-leading-6 rcp-tracking-widest rcp-uppercase rcp-text-primary-base">placed on july 28, 2025 AT 2:47 PM</span>
-<div class="rcp-grid rcp-grid-cols-1 md:rcp-grid-cols-3 rcp-gap-6 rcp-w-full">
-    <div class="rcp-col-span-1 md:rcp-col-span-2">
+<style>
+.order-header-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+@media (min-width: 768px) {
+    .order-header-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+    }
+}
+</style>
+
+<div class="order-header-grid">
+    <div class="rcp-flex rcp-items-center rcp-gap-2">
+        {% render 'icon', icon: 'arrow-left' %}
+        <p class="rcp-font-hanleyPro rcp-font-normal rcp-uppercase rcp-text-[20px] rcp-text-primary-base">return to orders</p>
+    </div>
+    <h2 class="rcp-font-hanleyBlock rcp-mt-2 md:rcp-mt-0 rcp-font-normal rcp-text-[44px] rcp-leading-[68px] rcp-text-center rcp-lowercase rcp-text-primary-base">order #cc532097</h2>
+    <div></div>
+</div>
+
+<span class="rcp-font-hanleyProSans rcp-font-bold rcp-text-base rcp-leading-6 rcp-tracking-widest rcp-uppercase rcp-text-primary-base">placed on july 28, 2025 AT 2:47 PM</span>
+<style>
+@media (min-width: 768px) {
+    .order-grid-container {
+        grid-template-columns: 2fr 1fr !important;
+        align-items: stretch;
+    }
+    .order-grid-container > div {
+        height: 100%;
+    }
+}
+</style>
+
+<div class="order-grid-container rcp-mt-3 rcp-w-full" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+    <div>
         {% render 'order-detail-main-item' %}
     </div>
-    <div class="rcp-col-span-1 rcp-flex rcp-flex-col rcp-gap-6">
-        {% render 'order-address-item' %}
-        {% render 'order-address-item' %}
+    <div class="rcp-flex rcp-flex-col rcp-gap-6">
+        {% render 'order-address-item', title: 'Billing Address' %}
+        {% render 'order-address-item', title: 'Shipping Address' %}
     </div>
 </div>
