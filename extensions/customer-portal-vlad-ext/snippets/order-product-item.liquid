@@ -1,11 +1,13 @@
 <!-- Product item desktop -->
 <div class="rcp-hidden md:rcp-grid rcp-grid-cols-[2fr_1fr_1fr_1fr] rcp-gap-6 rcp-items-start">
   <div class="rcp-flex rcp-items-start rcp-gap-4">
-    <img
-      src="{{ image | default: 'https://via.placeholder.com/100' }}"
-      alt="{{ title | default: 'Light Roast K-Cup' }}"
-      class="rcp-w-[140px] rcp-h-[140px] rcp-rounded-lg rcp-object-cover rcp-bg-gray-100"
-    >
+    <div class="rcp-w-[140px] rcp-flex-shrink-0">
+      <img
+        src="{{ image | default: 'https://via.placeholder.com/100' }}"
+        alt="{{ title | default: 'Light Roast K-Cup' }}"
+        class="rcp-w-full rcp-aspect-square rcp-rounded-lg rcp-object-cover rcp-bg-gray-100"
+      >
+    </div>
     <div class="rcp-flex rcp-flex-col">
       <span class="rcp-font-gtAmerica rcp-font-medium rcp-text-lg rcp-leading-120 rcp-capitalize rcp-text-primary-base">{{ title | default: 'Light Roast K-Cup' }}</span>
     </div>
@@ -23,11 +25,11 @@
 
 <!-- Product item mobile -->
 <div class="md:rcp-hidden rcp-flex rcp-gap-4 rcp-items-start">
-  <div class="rcp-flex-shrink-0">
+  <div class="rcp-w-[140px] rcp-flex-shrink-0">
     <img
       src="{{ image | default: 'https://via.placeholder.com/100' }}"
       alt="{{ title | default: 'Light Roast K-Cup' }}"
-      class="rcp-w-[140px] rcp-h-[140px] rcp-rounded-lg rcp-object-cover rcp-bg-gray-100"
+      class="rcp-w-full rcp-aspect-square rcp-rounded-lg rcp-object-cover rcp-bg-gray-100"
     >
   </div>
   <div class="rcp-flex rcp-flex-col rcp-gap-0.5 rcp-justify-between rcp-h-[140px]">
