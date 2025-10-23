@@ -1,10 +1,55 @@
 {
-  "ratings": {
-    "stars": {
-      "label": "Ratings"
+  "login": {
+    "title": "login",
+    "content_html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor.",
+    "form": {
+      "field_email": "Email address",
+      "submit": "login"
+    }
+  },
+  "code_verification": {
+    "title": "Enter Verification Code",
+    "form": {
+      "field_code": "Code from email",
+      "submit": "Login"
+    }
+  },
+  "main_title": "your crockett coffee account",
+  "navigation": {
+    "dashboard": "dashboard",
+    "orders": "orders",
+    "address_payment": "address & payment",
+    "manage_subscriptions": "manage subscriptions",
+    "log_out": "log out",
+    "next_order": "Next Order",
+    "upcoming_order": "Upcoming Order",
+  },
+  "product": {
+    "atc": "Add To Subscription"
+  },
+  "sections": {
+    "recommendations": {
+      "view_all": "View All Products"
+    }
+  },
+  "blocks": {
+    "upcoming_orders": {
+      "heading": {
+        "title": "Upcoming Orders",
+        "view_all": "View All"
+      },
+      "order_item": {
+        "title": "order #",
+        "total_products": "Total Products",
+        "subscription_date": "Subscription Date",
+        "expected_delivery": "Expected Delivery",
+        "status": "Status",
+        "button_edit": "Edit",
+        "button_view": "View"
+      }
     },
-    "home": {
-      "recommendationText": "Recommended Product!"
+    "progress_bar": {
+      "title_html": "Add <span data-progress-amount>{{ amount }}</span> for free shipping!"
     }
   }
 }

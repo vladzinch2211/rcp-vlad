@@ -1,0 +1,260 @@
+/* Recharge Customer Portal Styles */
+
+#recharge-portal {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Authentication (before login) */
+#auth-container {
+  padding: 40px;
+  text-align: center;
+}
+
+#auth-container input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+}
+
+#auth-container button {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+}
+
+#auth-container button:hover {
+  background: #0056b3;
+}
+
+#auth-container button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+#manual-switch-btn {
+  background: #28a745 !important;
+}
+
+/* Portal layout (after login) */
+#portal-layout {
+  display: none;
+  min-height: 500px;
+}
+
+#portal-sidebar {
+  width: 280px;
+  background: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  float: left;
+  min-height: 500px;
+}
+
+#portal-content {
+  margin-left: 280px;
+  padding: 30px;
+  min-height: 500px;
+  background: #fff;
+}
+
+/* Navigation */
+.nav-item {
+  display: block;
+  padding: 15px 20px;
+  color: #495057;
+  text-decoration: none;
+  border-bottom: 1px solid #dee2e6;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+.nav-item.active {
+  background: #007bff;
+  color: white;
+}
+
+.nav-item:last-child {
+  border-bottom: none;
+}
+
+/* Section content */
+.section-content {
+  display: none;
+}
+
+.section-content.active {
+  display: block;
+}
+
+/* Messages */
+#message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-warning {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.alert-info {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Subscription and order cards */
+.subscription-card, .order-card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  background: #fff;
+}
+
+.subscription-card h4, .order-card h4 {
+  margin: 0 0 10px 0;
+  color: #007bff;
+}
+
+.subscription-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-paused {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-cancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Action buttons */
+.action-buttons {
+  margin-top: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px 5px 5px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #545b62;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #1e7e34;
+}
+
+.btn-warning {
+  background: #ffc107;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background: #e0a800;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #recharge-portal {
+    margin: 10px;
+  }
+  
+  #portal-sidebar {
+    width: 100%;
+    float: none;
+    min-height: auto;
+  }
+  
+  #portal-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+}

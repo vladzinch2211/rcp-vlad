@@ -1,0 +1,40 @@
+<script>
+  window.RCP_TRANSLATIONS = {
+    order_item: {
+      title: "{{ 'blocks.upcoming_orders.order_item.title' | t }}",
+      total_products: "{{ 'blocks.upcoming_orders.order_item.total_products' | t }}",
+      subscription_date: "{{ 'blocks.upcoming_orders.order_item.subscription_date' | t }}",
+      expected_delivery: "{{ 'blocks.upcoming_orders.order_item.expected_delivery' | t }}",
+      status: "{{ 'blocks.upcoming_orders.order_item.status' | t }}",
+      button_edit: "{{ 'blocks.upcoming_orders.order_item.button_edit' | t }}",
+      button_view: "{{ 'blocks.upcoming_orders.order_item.button_view' | t }}",
+      button_edit_html: `{% render 'button-edit' %}`,
+      product_placeholder_svg: `{% assign svg = 'product-apparel-1' | placeholder_svg_tag %}{{ svg | replace: "\n", "" }}`
+    }
+  };
+</script>
+<script src="{{ 'upcoming-order.js' | asset_url }}" defer></script>
+
+<div class="customer-portal-panel">
+  <div
+    class="customer-portal-panel__header rcp-flex rcp-flex-row rcp-flex-nowrap rcp-items-center rcp-justify-between rcp-gap-4"
+  >
+    <div>
+      <h2
+        class="rcp-mt-1.5 rcp-font-hanleyBlock rcp-text-2xl rcp-lowercase rcp-leading-none rcp-text-inherit md:rcp-mt-2 lg:rcp-text-4xl"
+      >
+        {{ 'blocks.upcoming_orders.heading.title' | t }}
+      </h2>
+    </div>
+    <div>
+      <button
+        class="cp-button cp-button--secondary rcp-min-h-11 rcp-min-w-28 lg:rcp-min-h-14 lg:rcp-min-w-32"
+      >
+        {{ 'blocks.upcoming_orders.heading.view_all' | t }}
+      </button>
+    </div>
+  </div>
+  <upcoming-orders-list class="customer-portal-panel__content rcp-block rcp-space-y-4 lg:rcp-space-y-8">
+    {% render 'spinner', size: 'xl' %}
+  </upcoming-orders-list>
+</div>

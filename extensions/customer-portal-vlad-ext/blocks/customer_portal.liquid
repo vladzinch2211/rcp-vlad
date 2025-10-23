@@ -1,0 +1,297 @@
+<script src="{{ 'session-manager.js' | asset_url }}" defer></script>
+<script src="{{ 'recharge-sdk.js' | asset_url }}" defer></script>
+<script src="{{ 'recharge-customer-portal.js' | asset_url }}" defer></script>
+<script src="{{ 'splide.min.js' | asset_url }}" defer></script>
+
+{{ 'tailwind.css' | asset_url | stylesheet_tag }}
+{{ 'splide.min.css' | asset_url | stylesheet_tag }}
+<div>test</div>
+<div id="recharge-portal" class="py-10">
+  <!-- Authentication container -->
+  <div
+    data-auth-container
+    class="
+      rcp-grid
+      rcp-grid-cols-1
+      rcp-text-primary-base
+      sm:rcp-grid-cols-2
+    "
+  >
+    <div
+      class="
+        rcp-aspect-square
+        sm:rcp-aspect-auto
+        sm:rcp-order-1
+      "
+    >
+      {% if block.settings.login_page_image_main != blank %}
+        {{
+          block.settings.login_page_image_main
+          | image_url: width: block.settings.login_page_image_main.width
+          | image_tag: class: 'rcp-h-full rcp-w-full rcp-object-cover'
+        }}
+      {% else %}
+        {{ 'blog-apparel-1' | placeholder_svg_tag: 'rcp-object-cover rcp-h-full rcp-w-full' }}
+      {% endif %}
+    </div>
+    <div
+      class="
+        rcp-pt-14
+        rcp-px-6
+        rcp-pb-20
+        rcp-text-center
+        rcp-flex
+        rcp-flex-col
+        rcp-justify-center
+        rcp-items-stretch
+        rcp-flex-nowrap
+      "
+    >
+      <div id="email-form" class="rcp-max-w-xl rcp-mx-auto">
+        <h2
+          class="
+            rcp-mb-0.5
+            rcp-font-hanleyBlock
+            rcp-text-4xl
+            rcp-text-inherit
+            lg:rcp-text-6xl
+            lg:rcp-mb-2.5
+          "
+        >
+          {{ 'login.title' | t }}
+        </h2>
+        <div
+          class="
+            rcp-prose
+            rcp-text-inherit
+            rcp-font-optimalMedium
+            rcp-text-base
+            rcp-leading-tight
+            lg:rcp-text-lg
+          "
+        >
+          <p>{{ 'login.content_html' | t }}</p>
+        </div>
+        <form
+          id="recharge-email-form"
+          onsubmit="return false;"
+          class="
+            rcp-flex
+            rcp-flex-col
+            rcp-justify-start
+            rcp-items-stretch
+            rcp-flex-nowrap
+            rcp-mt-3
+            rcp-gap-1
+            lg:rcp-mt-10
+            lg:rcp-gap-8
+          "
+        >
+          <div>
+            <input
+              type="email"
+              id="recharge-email"
+              placeholder="{{ 'login.form.field_email' | t }}"
+              required
+              class="form-field--login"
+            >
+          </div>
+          <div
+            class="
+              rcp-pt-4
+              lg:rcp-pt-2
+            "
+          >
+            <button
+              type="button"
+              id="check-email-btn"
+              class="
+                rcp-button
+                rcp-mx-auto
+                rcp-max-w-64
+                rcp-min-h-11
+                rcp-w-full
+                rcp-button--primary-outline
+                lg:rcp-min-h-16
+                lg:rcp-min-w-80
+                lg:rcp-text-base
+              "
+            >
+              {{ 'login.form.submit' | t }}
+            </button>
+          </div>
+        </form>
+        <div id="message" class="rcp-mt-4 rcp-text-primary-accent rcp-text-lg rcp-font-bold"></div>
+
+        <!-- Button for manual switching -->
+        <button type="button" id="manual-switch-btn" style="display: none; margin-top: 10px;">
+          Code received - enter verification code
+        </button>
+      </div>
+
+      <div id="code-form" style="display: none;" class="rcp-max-w-xl">
+        <h2
+          class="
+            rcp-mb-0.5
+            rcp-font-hanleyBlock
+            rcp-text-4xl
+            rcp-text-inherit
+            lg:rcp-text-6xl
+            lg:rcp-mb-2.5
+          "
+        >
+          {{ 'code_verification.title' | t }}
+        </h2>
+        <form
+          id="recharge-code-form"
+          class="
+            rcp-flex
+            rcp-flex-col
+            rcp-justify-start
+            rcp-items-stretch
+            rcp-flex-nowrap
+            rcp-mt-3
+            rcp-gap-1
+            lg:rcp-mt-10
+            lg:rcp-gap-8
+          "
+        >
+          <div>
+            <input
+              type="text"
+              id="recharge-code"
+              placeholder="{{ 'code_verification.form.field_code' | t }}"
+              required
+              class="form-field--login"
+            >
+          </div>
+          <div
+            class="
+              rcp-pt-4
+              lg:rcp-pt-2
+            "
+          >
+            <button
+              type="submit"
+              class="
+                rcp-button
+                rcp-mx-auto
+                rcp-max-w-64
+                rcp-min-h-11
+                rcp-w-full
+                rcp-button--primary-outline
+                lg:rcp-min-h-16
+                lg:rcp-min-w-80
+                lg:rcp-text-base
+              "
+            >
+              {{ 'code_verification.form.submit' | t }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portal layout (after successful login) -->
+  <div id="portal-layout" class="rcp-hidden">
+    <h1 class="rcp-mb-8 rcp-pt-20 rcp-text-center rcp-font-hanleyBlock rcp-text-4xl rcp-text-primary-base">
+      {{ 'main_title' | t }}
+    </h1>
+
+    {% render 'main-navigation' %}
+    
+    <!-- Main content -->
+    <div
+      class="
+        rcp-container
+        rcp-mt-10
+        rcp-grid
+        rcp-max-w-[1534px]
+        rcp-grid-cols-1
+        rcp-gap-10
+        rcp-text-base
+        lg:rcp-grid-cols-[1fr_300px]
+        xl:rcp-mt-20
+        xl:rcp-grid-cols-[1fr_490px]
+      "
+    >
+      <div class="rcp-grid rcp-grid-cols-2 rcp-gap-8">
+        <div class="rcp-col-span-2">
+          {% render 'dashboard-upcoming-orders' %}
+        </div>
+        <div class="rcp-col-span-2">
+          {% render 'dashboard-progressbar' %}
+        </div>
+        <!-- Account overview -->
+        <div id="section-overview" class="section-content active">
+          <h2>Welcome!</h2>
+          <div id="customer-info" class="loading">Loading data...</div>
+          {% if block.settings.recommendations_show %}
+            <div class="rcp-col-span-2">{% render 'dashboard-recommendations' %}</div>
+          {% endif %}
+        </div>
+
+        <!-- Next order -->
+        <div id="section-next-order" class="section-content">
+          <h2>Your Next Order</h2>
+          <div id="next-order-content" class="loading">Loading data...</div>
+        </div>
+
+        <!-- Upcoming orders -->
+        <div id="section-upcoming-orders" class="section-content">
+          <h2>Upcoming Orders</h2>
+          <div id="upcoming-orders-content" class="loading">Loading data...</div>
+        </div>
+
+        <!-- Order history -->
+        <div id="section-previous-orders" class="section-content">
+          <h2>Order History</h2>
+          <div id="previous-orders-content" class="loading">Loading data...</div>
+        </div>
+
+        <!-- Subscription Management -->
+        <div id="section-subscriptions" class="section-content">
+          <h2>Your Subscriptions</h2>
+          <div id="subscriptions-content" class="loading">Loading data...</div>
+        </div>
+
+        <!-- Addresses and payment -->
+        <div id="section-addresses" class="section-content">
+          <h2>Address & Payment Methods</h2>
+          <div id="addresses-content" class="loading">Loading data...</div>
+        </div>
+      </div>
+      <div class="rcp-space-y-12">aside</div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Recharge Customer Portal",
+  "class": "recharge-customer-portal",
+  "target": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Login page"
+    },
+    {
+      "type": "image_picker",
+      "id": "login_page_image_main",
+      "label": "Main image"
+    },
+    {
+      "type": "header",
+      "content": "Free shipping bar"
+    },
+    {
+      "type": "number",
+      "id": "progressbar_amount_total",
+      "label": "Free shipping amount",
+      "default": 50
+    }
+  ]
+}
+{% endschema %}

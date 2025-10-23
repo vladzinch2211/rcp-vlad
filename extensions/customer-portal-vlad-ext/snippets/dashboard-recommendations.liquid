@@ -1,0 +1,109 @@
+<div class="rcp-relative">
+  <div class="rcp-mb-6 rcp-flex rcp-items-center rcp-justify-between rcp-gap-4 lg:rcp-mb-8">
+    <h2 class="rcp-font-hanleyBlock rcp-text-3xl rcp-lowercase rcp-leading-none rcp-text-primary-base lg:rcp-text-5xl">{{ block.settings.recommendations_title }}</h2>
+
+    <div class="splide__arrows recommendations-arrows rcp-text-primary-base">
+      <button class="splide__arrow splide__arrow--prev" aria-label="Previous recommendations">{% render 'icon', icon: 'chevron-left' %}</button>
+      <button class="splide__arrow splide__arrow--next" aria-label="Next recommendations">{% render 'icon', icon: 'chevron-right' %}</button>
+    </div>
+  </div>
+
+  <div
+    id="recommendations-slider"
+    class="splide -rcp-mx-5 md:rcp-mx-0"
+    aria-label="Recommendations slider"
+  >
+    <div class="splide__track">
+      <div class="splide__list">
+        {% for product in block.settings.collection.products %}
+        <div class="splide__slide">{% render 'card-product-recommendation', product: product %}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="rcp-mt-9 rcp-flex rcp-flex-col rcp-flex-nowrap rcp-items-center rcp-justify-start rcp-gap-4 lg:rcp-mt-6">
+    <a
+      href="{{ block.settings.collection.url }}"
+      class="rcp-button rcp-button--primary-outline rcp-min-h-11 rcp-min-w-52 lg:rcp-min-h-14 lg:rcp-min-w-72 lg:rcp-rounded-md lg:rcp-text-base"
+    >
+      {{ 'sections.recommendations.view_all' | t }}
+    </a>
+  </div>
+</div>
+
+<style>
+  .recommendations-arrows {
+    position: static !important;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .recommendations-arrows .splide__arrow {
+    position: static !important;
+    transform: none !important;
+    background: #EAEDEE !important;
+    border: none !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    border-radius: 50% !important;
+    opacity: 1 !important;
+  }
+
+  .recommendations-arrows .splide__arrow svg {
+    fill: #3b6380 !important;
+  }
+
+  .recommendations-arrows .splide__arrow--prev {
+    transform: scaleX(-1) !important;
+  }
+
+  .recommendations-arrows .splide__arrow:disabled {
+    opacity: 0.3 !important;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const splide = new Splide("#recommendations-slider", {
+      type: "loop",
+      perPage: 1,
+      pagination: false,
+      arrows: false,
+      gap: "18px",
+      padding: {
+        right: "134px",
+        left: "20px",
+      },
+      mediaQuery: "min",
+      breakpoints: {
+        640: {
+          perPage: 2,
+        },
+        768: {
+          perPage: 3,
+          padding: {
+            right: "0",
+            left: "0",
+          },
+        },
+        1024: {
+          perPage: 2,
+        },
+        1280: {
+          perPage: 3,
+          gap: "24px",
+        },
+      },
+    });
+    splide.mount();
+
+    const prevButton = document.querySelector(".recommendations-arrows .splide__arrow--prev");
+    const nextButton = document.querySelector(".recommendations-arrows .splide__arrow--next");
+
+    if (prevButton && nextButton) {
+      prevButton.addEventListener("click", () => splide.go("<"));
+      nextButton.addEventListener("click", () => splide.go(">"));
+    }
+  });
+</script>

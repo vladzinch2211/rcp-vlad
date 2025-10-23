@@ -1,0 +1,23 @@
+<div
+  class="rcp-border-base-gray rcp-flex rcp-h-full rcp-flex-col rcp-flex-nowrap rcp-items-stretch rcp-justify-between rcp-gap-2.5 rcp-rounded-2xl rcp-border-1 rcp-bg-white rcp-p-4 rcp-font-optimalMedium rcp-text-primary-base lg:rcp-gap-4 lg:rcp-rounded-3xl lg:rcp-p-5"
+>
+  <div>
+    <div class="rcp-relative rcp-rounded-md before:rcp-block before:rcp-pb-[75%] lg:rcp-rounded-lg">
+      {{ product.featured_image | image_url: width: 208 | image_tag: class: 'rcp-w-full rcp-h-full rcp-object-contain rcp-absolute rcp-top-0 rcp-left-0' }}
+    </div>
+    <div class="rcp-pt-7 rcp-text-center">
+      <h3 class="rcp-font-hanleyMonolineSans rcp-text-sm rcp-text-inherit lg:rcp-text-lg">
+        <a
+          href="{{ product.url }}"
+          class="hover:rcp-underline"
+        >
+          {{ product.title }}
+        </a>
+      </h3>
+      <span class="rcp-mt-3 rcp-block rcp-text-sm rcp-leading-none lg:rcp-text-base">{{ product.selected_or_first_available_variant.price | money }}</span>
+    </div>
+  </div>
+  <div>
+    <button class="rcp-button rcp-button--primary rcp-min-h-11 rcp-w-full !rcp-rounded !rcp-text-xs lg:rcp-min-h-14 lg:!rcp-text-base">{{ 'product.atc' | t }}</button>
+  </div>
+</div>
