@@ -642,6 +642,21 @@ video {
   margin-right: auto;
 }
 
+.rcp-my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.rcp-my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.rcp-my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .rcp-mb-0\.5 {
   margin-bottom: 0.125rem;
 }
@@ -1317,6 +1332,10 @@ video {
   font-weight: 400;
 }
 
+.rcp-font-semibold {
+  font-weight: 600;
+}
+
 .rcp-uppercase {
   text-transform: uppercase;
 }
@@ -1891,12 +1910,24 @@ html {
     grid-template-columns: 1fr 300px;
   }
 
+  .lg\:rcp-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:rcp-grid-cols-\[2fr_1fr\] {
+    grid-template-columns: 2fr 1fr;
+  }
+
   .lg\:rcp-flex-row {
     flex-direction: row;
   }
 
   .lg\:rcp-flex-nowrap {
     flex-wrap: nowrap;
+  }
+
+  .lg\:rcp-items-start {
+    align-items: flex-start;
   }
 
   .lg\:rcp-items-center {

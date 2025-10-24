@@ -1,43 +1,16 @@
-<style>
-.order-header-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-}
-@media (min-width: 1024px) {
-    .order-header-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-    }
-}
-</style>
-
-<div class="order-header-grid">
+<div class="rcp-grid rcp-grid-cols-1 rcp-gap-10 lg:rcp-grid-cols-3 lg:rcp-items-center">
     {% render 'button-back' %}
     <h2 class="rcp-font-hanleyBlock rcp-font-normal rcp-text-11 rcp-leading-[68px] rcp-text-center rcp-lowercase rcp-text-primary-base">order #cc532097</h2>
     <div></div>
 </div>
 
 <span class="rcp-font-hanleyProSans rcp-font-bold rcp-text-base rcp-leading-6 rcp-tracking-widest rcp-uppercase rcp-text-primary-base">placed on july 28, 2025 AT 2:47 PM</span>
-<style>
-@media (min-width: 1024px) {
-    .order-grid-container {
-        grid-template-columns: 2fr 1fr !important;
-        align-items: start;
-    }
-    .order-grid-container > div {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-}
-</style>
 
-<div class="order-grid-container rcp-mt-3 rcp-w-full" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
-    <div>
+<div class="rcp-mt-3 rcp-w-full rcp-grid rcp-grid-cols-1 rcp-gap-6 lg:rcp-grid-cols-[2fr_1fr] lg:rcp-items-start">
+    <div class="rcp-h-full rcp-flex rcp-flex-col">
         {% render 'order-detail-main-item' %}
     </div>
-    <div class="rcp-flex rcp-flex-col rcp-gap-6">
+    <div class="rcp-h-full rcp-flex rcp-flex-col rcp-gap-6">
         {% render 'order-address-item', title: 'Billing Address' %}
         {% render 'order-address-item', title: 'Shipping Address' %}
     </div>
