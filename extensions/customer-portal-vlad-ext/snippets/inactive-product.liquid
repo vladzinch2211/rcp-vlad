@@ -1,0 +1,20 @@
+
+<div class="customer-portal-panel">
+  <div
+    class="customer-portal-panel__header customer-portal-panel__header--inactive rcp-flex rcp-flex-row rcp-flex-nowrap rcp-items-center rcp-justify-between rcp-gap-4"
+  >
+    <div>
+      <h2
+        class="rcp-mt-1.5 rcp-font-hanleyBlock rcp-text-2xl rcp-lowercase rcp-leading-none rcp-text-inherit md:rcp-mt-2 lg:rcp-text-4xl"
+      >
+        {{ 'blocks.inactive_products.heading.title' | t }}
+      </h2>
+    </div>
+  </div>
+  <upcoming-orders-list class="customer-portal-panel__content rcp-block rcp-space-y-4 lg:rcp-space-y-8">
+     {% render 'subscription-product-item' %}
+     {% render 'subscription-product-item' %}
+  </upcoming-orders-list>
+</div>
+
+

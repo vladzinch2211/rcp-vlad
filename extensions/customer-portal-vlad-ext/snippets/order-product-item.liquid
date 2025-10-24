@@ -1,12 +1,8 @@
 <!-- Product item desktop -->
 <div class="rcp-hidden md:rcp-grid rcp-grid-cols-[2fr_1fr_1fr_1fr] rcp-items-start">
   <div class="rcp-flex rcp-items-start rcp-gap-4">
-    <div class="rcp-w-[140px] rcp-flex-shrink-0">
-      <img
-        src="{{ image | default: 'elementor-placeholder-image.png' | asset_url }}"
-        alt="{{ title | default: 'Light Roast K-Cup' }}"
-        class="rcp-w-full rcp-aspect-square rcp-rounded-lg rcp-object-cover rcp-bg-gray-100"
-      >
+    <div class="rcp-w-[140px] rcp-flex-shrink-0 rcp-aspect-square rcp-rounded-lg rcp-overflow-hidden rcp-bg-gray-100 [&_svg]:rcp-h-full [&_svg]:rcp-w-full [&_svg]:rcp-object-cover">
+      {{ 'product-apparel-1' | placeholder_svg_tag }}
     </div>
     <div class="rcp-flex rcp-flex-col">
       <span class="rcp-font-gtAmerica rcp-font-medium rcp-text-lg rcp-leading-120 rcp-capitalize rcp-text-primary-base">{{ title | default: 'Light Roast K-Cup' }}</span>
@@ -25,12 +21,8 @@
 
 <!-- Product item mobile -->
 <div class="md:rcp-hidden rcp-flex rcp-gap-4 rcp-items-start">
-  <div class="rcp-w-[140px] rcp-flex-shrink-0">
-    <img
-      src="{{ image | default: 'elementor-placeholder-image.png' | asset_url }}"
-      alt="{{ title | default: 'Light Roast K-Cup' }}"
-      class="rcp-w-full rcp-aspect-square rcp-rounded-lg rcp-object-cover rcp-bg-gray-100"
-    >
+  <div class="rcp-w-[140px] rcp-flex-shrink-0 rcp-aspect-square rcp-rounded-lg rcp-overflow-hidden rcp-bg-gray-100 [&_svg]:rcp-h-full [&_svg]:rcp-w-full [&_svg]:rcp-object-cover">
+    {{ 'product-apparel-1' | placeholder_svg_tag }}
   </div>
   <div class="rcp-flex rcp-flex-col rcp-gap-0.5 rcp-justify-between">
     <div>

@@ -49,6 +49,10 @@ html {
   @apply lg:rcp-min-h-[88px] lg:rcp-px-10;
 }
 
+.customer-portal-panel__header--inactive {
+  @apply rcp-bg-[#EEEDE7] rcp-px-10 rcp-py-3 rcp-text-primary-base;
+}
+
 .customer-portal-panel__content {
   @apply rcp-p-4;
   @apply md:rcp-px-5 md:rcp-pb-6 md:rcp-pt-8;

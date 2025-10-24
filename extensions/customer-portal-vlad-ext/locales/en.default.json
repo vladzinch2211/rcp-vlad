@@ -33,6 +33,16 @@
     }
   },
   "blocks": {
+    "active_subscriptions": {
+      "heading": {
+        "title": "Active Subscriptions"
+      }
+    },
+    "inactive_products": {
+      "heading": {
+        "title": "Inactive Products"
+      }
+    },
     "upcoming_orders": {
       "heading": {
         "title": "Upcoming Orders",
