@@ -1,3 +1,9 @@
+{% if is_active == false %}
+  {% assign is_active = false %}
+{% else %}
+  {% assign is_active = true %}
+{% endif %}
+
 <div class="rcp-font-optimalMedium rcp-rounded-xl rcp-bg-white rcp-p-4 rcp-text-sm rcp-text-primary-base rcp-shadow-[0_4px_48px_rgba(0,0,0,0.08)] md:rcp-p-5">
   <!-- Desktop Layout -->
   <div class="rcp-hidden md:rcp-flex rcp-items-center rcp-gap-6">
@@ -11,7 +17,7 @@
     <!-- Content -->
     <div class="rcp-flex-grow">
       <h3 class="rcp-font-hanleyMonolineSans rcp-text-base rcp-uppercase rcp-text-primary-base rcp-mb-3 lg:rcp-text-lg">
-        Light Roast K-Cups, Order #534201
+        Light Roast K-Cups{% unless is_active %}, Order #534201{% endunless %}
       </h3>
       <div class="rcp-flex rcp-flex-col rcp-gap-2">
         <div class="rcp-flex rcp-items-center rcp-gap-6 rcp-text-sm">
@@ -29,7 +35,11 @@
         </div>
         <div class="rcp-flex rcp-items-center rcp-text-sm">
           <span class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-5 rcp-text-primary-base">Status:</span>
-          <span class="rcp-inline-block rcp-ml-2 rcp-rounded-full rcp-bg-primary-gray rcp-px-3 rcp-py-1 rcp-text-xs">Every 30 Days</span>
+          {% if is_active %}
+            <span class="rcp-inline-flex rcp-items-center rcp-ml-2 rcp-rounded-full rcp-bg-primary-gray rcp-px-3 rcp-py-1 rcp-font-gtAmerica rcp-text-xs">Every 30 Days</span>
+          {% else %}
+            <span class="rcp-inline-flex rcp-items-center rcp-ml-2 rcp-rounded-full rcp-bg-primary-gray rcp-px-3 rcp-py-1 rcp-font-gtAmerica rcp-text-xs">Cancelled</span>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -37,16 +47,22 @@
     <!-- Buttons -->
     <div class="rcp-flex rcp-flex-shrink-0 rcp-items-center rcp-gap-3">
       {% render 'button-edit' %}
-      <button class="cp-button cp-button--primary rcp-min-h-11 rcp-min-w-32">
-        VIEW
-      </button>
+      {% if is_active %}
+        <button class="cp-button cp-button--primary rcp-min-h-11 rcp-min-w-32">
+          VIEW
+        </button>
+      {% else %}
+        <button class="cp-button rcp-bg-[#EEEDE7] rcp-text-primary-base hover:rcp-bg-[#EEEDE7]/75 rcp-min-h-11 rcp-min-w-32">
+          REACTIVATE
+        </button>
+      {% endif %}
     </div>
   </div>
 
   <!-- Mobile Layout -->
   <div class="md:rcp-hidden">
     <h3 class="rcp-font-hanleyMonolineSans rcp-text-base rcp-uppercase rcp-text-primary-base rcp-mb-4">
-      Light Roast K-Cups, Order #534201
+      Light Roast K-Cups{% unless is_active %}, Order #534201{% endunless %}
     </h3>
 
     <div class="rcp-flex rcp-gap-4">
@@ -60,9 +76,15 @@
         <!-- Buttons -->
         <div class="rcp-flex rcp-items-center rcp-gap-3">
           {% render 'button-edit' %}
-          <button class="cp-button cp-button--primary rcp-flex-grow rcp-min-h-11">
-            VIEW
-          </button>
+          {% if is_active %}
+            <button class="cp-button cp-button--primary rcp-flex-grow rcp-min-h-11">
+              VIEW
+            </button>
+          {% else %}
+            <button class="cp-button rcp-bg-[#EEEDE7] rcp-text-primary-base hover:rcp-bg-[#EEEDE7]/75 rcp-flex-grow rcp-min-h-11">
+              REACTIVATE
+            </button>
+          {% endif %}
         </div>
       </div>
 
@@ -77,7 +99,11 @@
         </div>
         <div>
           <div class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-5 rcp-text-primary-base rcp-mb-1">Status:</div>
-          <span class="rcp-inline-block rcp-rounded-full rcp-bg-primary-gray rcp-px-3 rcp-py-1.5 rcp-text-xs">Every 30 Days</span>
+          {% if is_active %}
+            <span class="rcp-inline-flex rcp-items-center rcp-rounded-full rcp-bg-primary-gray rcp-px-3 rcp-py-1.5 rcp-font-gtAmerica rcp-text-xs">Every 30 Days</span>
+          {% else %}
+            <span class="rcp-inline-flex rcp-items-center rcp-rounded-full rcp-bg-primary-gray rcp-px-3 rcp-py-1.5 rcp-font-gtAmerica rcp-text-xs">Cancelled</span>
+          {% endif %}
         </div>
         <div>
           <div class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-5 rcp-text-primary-base rcp-mb-1">Expected Delivery:</div>

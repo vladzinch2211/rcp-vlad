@@ -723,6 +723,10 @@ video {
   display: flex;
 }
 
+.rcp-inline-flex {
+  display: inline-flex;
+}
+
 .rcp-grid {
   display: grid;
 }
@@ -1094,6 +1098,16 @@ video {
 .rcp-bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.rcp-bg-\[\#F5F7F8\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 247 248 / var(--tw-bg-opacity, 1));
+}
+
+.rcp-bg-\[\#EEEDE7\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 237 231 / var(--tw-bg-opacity, 1));
 }
 
 .rcp-bg-gradient-to-r {
@@ -1749,6 +1763,14 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:rcp-bg-\[\#F5F7F8\]\/75:hover {
+  background-color: rgb(245 247 248 / 0.75);
+}
+
+.hover\:rcp-bg-\[\#EEEDE7\]\/75:hover {
+  background-color: rgb(238 237 231 / 0.75);
+}
+
 .hover\:rcp-underline:hover {
   text-decoration-line: underline;
 }
@@ -1849,6 +1871,19 @@ html {
   .md\:rcp-py-11 {
     padding-top: 2.75rem;
     padding-bottom: 2.75rem;
+  }
+
+  .md\:rcp-px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .md\:rcp-pb-6 {
+    padding-bottom: 1.5rem;
+  }
+
+  .md\:rcp-pt-8 {
+    padding-top: 2rem;
   }
 }
 
