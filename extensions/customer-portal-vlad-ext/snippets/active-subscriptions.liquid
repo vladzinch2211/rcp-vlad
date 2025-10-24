@@ -1,5 +1,5 @@
 
-<div class="customer-portal-panel">
+<div class="customer-portal-panel--no-bg rcp-bg-white">
   <div
     class="customer-portal-panel__header rcp-flex rcp-flex-row rcp-flex-nowrap rcp-items-center rcp-justify-between rcp-gap-4"
   >
@@ -11,9 +11,9 @@
       </h2>
     </div>
   </div>
-  <upcoming-orders-list class="customer-portal-panel__content rcp-block rcp-space-y-4 lg:rcp-space-y-8">
+  <div class="rcp-block rcp-space-y-4 lg:rcp-space-y-8 rcp-bg-white">
      {% render 'subscription-product-item' %}
      {% render 'subscription-product-item' %}
      {% render 'subscription-product-item' %}
-  </upcoming-orders-list>
+  </div>
 </div>
