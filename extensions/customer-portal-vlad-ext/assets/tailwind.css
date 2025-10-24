@@ -1110,6 +1110,11 @@ video {
   background-color: rgb(238 237 231 / var(--tw-bg-opacity, 1));
 }
 
+.\!rcp-bg-white {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)) !important;
+}
+
 .rcp-bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
