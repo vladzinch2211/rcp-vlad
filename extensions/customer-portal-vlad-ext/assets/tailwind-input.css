@@ -44,9 +44,17 @@ html {
   @apply rcp-overflow-hidden rcp-rounded-2xl rcp-bg-white;
 }
 
+.customer-portal-panel--no-bg {
+  @apply rcp-overflow-hidden rcp-rounded-2xl rcp-bg-white rcp-shadow-[0_4px_48px_rgba(0,0,0,0.08)];
+}
+
 .customer-portal-panel__header {
   @apply rcp-bg-primary-base rcp-px-2.5 rcp-py-3 rcp-text-white;
   @apply lg:rcp-min-h-[88px] lg:rcp-px-10;
+}
+
+.customer-portal-panel__header--inactive {
+  @apply rcp-bg-[#EEEDE7] rcp-px-10 rcp-py-3 rcp-text-primary-base;
 }
 
 .customer-portal-panel__content {

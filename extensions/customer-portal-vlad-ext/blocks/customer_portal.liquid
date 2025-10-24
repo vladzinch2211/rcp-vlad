@@ -5,7 +5,16 @@
 
 {{ 'tailwind.css' | asset_url | stylesheet_tag }}
 {{ 'splide.min.css' | asset_url | stylesheet_tag }}
-<div>test</div>
+
+{% comment %} <div style="margin: 20px 0 20px;">
+{% render 'order'%}
+</div> {% endcomment %}
+<div style="margin: 20px 0 20px;">
+{% render 'active-subscriptions' %}
+</div>
+{% comment %} <div style="margin: 20px 0 20px;">
+{% render 'inactive-product' %}
+</div> {% endcomment %}
 <div id="recharge-portal" class="py-10">
   <!-- Authentication container -->
   <div

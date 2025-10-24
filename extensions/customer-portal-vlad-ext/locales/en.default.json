@@ -22,7 +22,7 @@
     "manage_subscriptions": "manage subscriptions",
     "log_out": "log out",
     "next_order": "Next Order",
-    "upcoming_order": "Upcoming Order",
+    "upcoming_order": "Upcoming Order"
   },
   "product": {
     "atc": "Add To Subscription"
@@ -38,6 +38,16 @@
         "title": "Upcoming Orders",
         "view_all": "View All"
       },
+      "active_subscriptions": {
+        "heading": {
+          "title": "Active Subscriptions"
+        }
+      },
+      "inactive_products": {
+        "heading": {
+          "title": "Inactive Products"
+        }
+      },
       "order_item": {
         "title": "order #",
         "total_products": "Total Products",
@@ -50,6 +60,64 @@
     },
     "progress_bar": {
       "title_html": "Add <span data-progress-amount>{{ amount }}</span> for free shipping!"
+    },
+    "personal_info": {
+      "heading": {
+        "title": "Personal info"
+      },
+      "form": {
+        "name_placeholder": "Name",
+        "email_placeholder": "Email",
+        "phone_placeholder": "phone"
+      }
+    },
+    "personal_address": {
+      "heading": {
+        "title": "address"
+      },
+      "form": {
+        "toggle": {
+          "primary": "Primary Address",
+          "default": "Default Address"
+        },
+        "address_placeholder": "address",
+        "add_button": "add new address"
+      }
+    },
+    "payment": {
+      "heading": {
+        "title": "payment"
+      },
+      "form": {
+        "toggle": {
+          "default": "Default"
+        },
+        "card_placeholder": "card",
+        "address_placeholder": {
+          "billing": "billind address"
+        },
+        "add_button": "add new payment method"
+      }
+    }
+  },
+  "popups": {
+    "address": {
+      "add": {
+        "title": "add address",
+        "form": {
+          "first_name": "First Name",
+          "last_name": "Last Name",
+          "company": "Company",
+          "address": "Address*",
+          "address_2": "Address 2",
+          "city": "City",
+          "state": "State / Province",
+          "zip": "Zip / Postal Code",
+          "country": "Country",
+          "phone": "Phone",
+          "checkbox_set_default": "Set as default address"
+        }
+      }
     }
   }
 }

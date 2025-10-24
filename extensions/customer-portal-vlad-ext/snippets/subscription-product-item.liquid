@@ -1,0 +1,115 @@
+{% if is_active == false %}
+  {% assign is_active = false %}
+{% else %}
+  {% assign is_active = true %}
+{% endif %}
+
+<div class="rcp-font-optimalMedium rcp-rounded-xl rcp-bg-white rcp-p-4 rcp-text-sm rcp-text-primary-base rcp-shadow-[0_4px_48px_rgba(0,0,0,0.08)] md:rcp-p-5">
+  <!-- Desktop Layout -->
+  <div class="rcp-hidden md:rcp-flex rcp-items-center rcp-gap-6">
+    <!-- Image -->
+    <div class="rcp-flex-shrink-0">
+      <div class="rcp-w-[120px] rcp-h-[120px] rcp-overflow-hidden rcp-rounded-2xl [&_svg]:rcp-h-full [&_svg]:rcp-w-full [&_svg]:rcp-object-contain">
+        {{ 'product-apparel-1' | placeholder_svg_tag }}
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="rcp-flex-grow">
+      <h3 class="rcp-font-hanleyMonolineSans rcp-text-base rcp-uppercase rcp-text-primary-base rcp-mb-3 lg:rcp-text-lg">
+        Light Roast K-Cups{% unless is_active %}, Order #534201{% endunless %}
+      </h3>
+      <div class="rcp-flex rcp-flex-col rcp-gap-2">
+        <div class="rcp-flex rcp-items-center rcp-gap-6 rcp-text-sm">
+          <div>
+            <span class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-capitalize rcp-text-primary-base">2 X $29.99</span>
+          </div>
+          <div>
+            <span class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-5 rcp-text-primary-base">Subscription Date:</span>
+            <span class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-capitalize rcp-text-primary-base rcp-ml-1">4/30/2025</span>
+          </div>
+          <div>
+            <span class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-5 rcp-text-primary-base">Expected Delivery:</span>
+            <span class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-capitalize rcp-text-primary-base rcp-ml-1">4/30/2025</span>
+          </div>
+        </div>
+        <div class="rcp-flex rcp-items-center rcp-text-sm">
+          <span class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-5 rcp-text-primary-base">Status:</span>
+          {% if is_active %}
+            <span class="rcp-inline-flex rcp-items-center rcp-ml-2 rcp-rounded-full rcp-bg-primary-gray rcp-px-3 rcp-py-1 rcp-font-gtAmerica rcp-text-xs">Every 30 Days</span>
+          {% else %}
+            <span class="rcp-inline-flex rcp-items-center rcp-ml-2 rcp-rounded-full rcp-bg-primary-gray rcp-px-3 rcp-py-1 rcp-font-gtAmerica rcp-text-xs">Cancelled</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="rcp-flex rcp-flex-shrink-0 rcp-items-center rcp-gap-3">
+      {% render 'button-edit' %}
+      {% if is_active %}
+        <button class="cp-button cp-button--primary rcp-min-h-11 rcp-min-w-32">
+          VIEW
+        </button>
+      {% else %}
+        <button class="cp-button rcp-bg-[#EEEDE7] rcp-text-primary-base hover:rcp-bg-[#EEEDE7]/75 rcp-min-h-11 rcp-min-w-32">
+          REACTIVATE
+        </button>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Mobile Layout -->
+  <div class="md:rcp-hidden">
+    <h3 class="rcp-font-hanleyMonolineSans rcp-text-base rcp-uppercase rcp-text-primary-base rcp-mb-4">
+      Light Roast K-Cups{% unless is_active %}, Order #534201{% endunless %}
+    </h3>
+
+    <div class="rcp-flex rcp-gap-4">
+      <!-- Left Column: Image and Buttons -->
+      <div class="rcp-flex rcp-flex-col rcp-gap-4 rcp-flex-shrink-0">
+        <!-- Image -->
+        <div class="rcp-w-[168px] rcp-h-[168px] rcp-overflow-hidden rcp-rounded-2xl [&_svg]:rcp-h-full [&_svg]:rcp-w-full [&_svg]:rcp-object-contain">
+          {{ 'product-apparel-1' | placeholder_svg_tag }}
+        </div>
+
+        <!-- Buttons -->
+        <div class="rcp-flex rcp-items-center rcp-gap-3">
+          {% render 'button-edit' %}
+          {% if is_active %}
+            <button class="cp-button cp-button--primary rcp-flex-grow rcp-min-h-11">
+              VIEW
+            </button>
+          {% else %}
+            <button class="cp-button rcp-bg-[#EEEDE7] rcp-text-primary-base hover:rcp-bg-[#EEEDE7]/75 rcp-flex-grow rcp-min-h-11">
+              REACTIVATE
+            </button>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Right Column: Content -->
+      <div class="rcp-flex rcp-flex-col rcp-gap-3 rcp-text-sm">
+        <div>
+          <span class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-capitalize rcp-text-primary-base">2 X $29.99</span>
+        </div>
+        <div>
+          <div class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-5 rcp-text-primary-base rcp-mb-1">Subscription Date:</div>
+          <div class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-capitalize rcp-text-primary-base">4/30/2025</div>
+        </div>
+        <div>
+          <div class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-5 rcp-text-primary-base rcp-mb-1">Status:</div>
+          {% if is_active %}
+            <span class="rcp-inline-flex rcp-items-center rcp-rounded-full rcp-bg-primary-gray rcp-px-3 rcp-py-1.5 rcp-font-gtAmerica rcp-text-xs">Every 30 Days</span>
+          {% else %}
+            <span class="rcp-inline-flex rcp-items-center rcp-rounded-full rcp-bg-primary-gray rcp-px-3 rcp-py-1.5 rcp-font-gtAmerica rcp-text-xs">Cancelled</span>
+          {% endif %}
+        </div>
+        <div>
+          <div class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-5 rcp-text-primary-base rcp-mb-1">Expected Delivery:</div>
+          <div class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-capitalize rcp-text-primary-base">4/30/2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

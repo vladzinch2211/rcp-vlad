@@ -1,0 +1,47 @@
+<div class="rcp-bg-white rcp-py-5 rcp-px-5 md:rcp-py-11 md:rcp-px-11 rcp-rounded-2xl rcp-shadow-[0_4px_48px_rgba(0,0,0,0.08)]">
+  <!-- Header Row -->
+  <div class="rcp-grid rcp-grid-cols-[2fr_1fr_1fr_1fr] rcp-gap-6 rcp-mb-6 rcp-items-center">
+    <div class="rcp-font-hanleyProSans rcp-font-bold rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase">Product</div>
+    <div class="rcp-font-hanleyProSans rcp-font-bold rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase rcp-text-center rcp-hidden md:rcp-block">Price</div>
+    <div class="rcp-font-hanleyProSans rcp-font-bold rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase rcp-text-center rcp-hidden md:rcp-block">Quantity</div>
+    <div class="rcp-font-hanleyProSans rcp-font-bold rcp-text-lg rcp-leading-6 rcp-tracking-widest rcp-text-primary-base rcp-uppercase rcp-text-center rcp-hidden md:rcp-block">Total</div>
+  </div>
+
+  {% render 'order-product-item' %}
+
+  <div class="rcp-my-8">
+    {% render 'separator-line' %}
+  </div>
+
+  <!-- Total -->
+  <div class="rcp-flex rcp-justify-end">
+    <div class="rcp-flex rcp-flex-col rcp-gap-6 rcp-w-full md:rcp-w-[400px]">
+      <!-- Subtotal -->
+      <div class="rcp-flex rcp-justify-between rcp-items-center">
+        <p class="rcp-text-sm rcp-uppercase rcp-font-bold rcp-text-primary-base rcp-tracking-wider">Subtotal</p>
+        <span class="rcp-text-base rcp-text-primary-base rcp-text-right">$29.95 USD</span>
+      </div>
+      <!-- Tax -->
+      <div class="rcp-flex rcp-justify-between rcp-items-center">
+        <p class="rcp-text-sm rcp-uppercase rcp-font-bold rcp-text-primary-base rcp-tracking-wider">Tax</p>
+        <span class="rcp-text-base rcp-text-primary-base rcp-text-right">$0.00 USD</span>
+      </div>
+      <!-- Total -->
+      <div class="rcp-flex rcp-justify-between rcp-items-center">
+        <p class="rcp-text-sm rcp-uppercase rcp-font-bold rcp-text-primary-base rcp-tracking-wider">Total</p>
+        <span class="rcp-text-base rcp-text-primary-base rcp-text-right">$29.95 USD</span>
+      </div>
+         <!-- Payment status -->
+      <div class="rcp-flex rcp-justify-between rcp-items-center md:rcp-hidden">
+        <p class="rcp-text-sm rcp-uppercase rcp-font-bold rcp-text-primary-base rcp-tracking-wider">payment status</p>
+        <span class="rcp-text-base rcp-text-primary-base">Paid</span>
+      </div>
+        <!-- fulfillment status -->
+      <div class="rcp-flex rcp-justify-between rcp-items-center md:rcp-hidden">
+        <p class="rcp-text-sm rcp-uppercase rcp-font-bold rcp-text-primary-base rcp-tracking-wider">fulfillment status</p>
+        <span class="rcp-text-base rcp-text-primary-base">Unfulfilled</span>
+      </div>
+    </div>
+  </div>
+</div>
+

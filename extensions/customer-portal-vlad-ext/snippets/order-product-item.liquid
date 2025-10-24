@@ -1,0 +1,42 @@
+<!-- Product item desktop -->
+<div class="rcp-hidden md:rcp-grid rcp-grid-cols-[2fr_1fr_1fr_1fr] rcp-items-start">
+  <div class="rcp-flex rcp-items-start rcp-gap-4">
+    <div class="rcp-w-[140px] rcp-flex-shrink-0 rcp-aspect-square rcp-rounded-lg rcp-overflow-hidden rcp-bg-gray-100 [&_svg]:rcp-h-full [&_svg]:rcp-w-full [&_svg]:rcp-object-cover">
+      {{ 'product-apparel-1' | placeholder_svg_tag }}
+    </div>
+    <div class="rcp-flex rcp-flex-col">
+      <span class="rcp-font-gtAmerica rcp-font-semibold rcp-text-lg rcp-leading-120 rcp-capitalize rcp-text-primary-base">{{ title | default: 'Light Roast K-Cup' }}</span>
+    </div>
+  </div>
+  <div class="rcp-font-gtAmerica rcp-font-normal rcp-text-lg rcp-leading-120 rcp-text-primary-base rcp-text-center">
+    {{ price | default: '$29.95' }}
+  </div>
+  <div class="rcp-font-gtAmerica rcp-font-normal rcp-text-lg rcp-leading-120 rcp-text-primary-base rcp-text-center">
+    {{ quantity | default: '01' }}
+  </div>
+  <div class="rcp-font-gtAmerica rcp-font-normal rcp-text-lg rcp-leading-120 rcp-text-primary-base rcp-text-right">
+    {{ total | default: '$29.95 USD' }}
+  </div>
+</div>
+
+<!-- Product item mobile -->
+<div class="md:rcp-hidden rcp-flex rcp-gap-4 rcp-items-start">
+  <div class="rcp-w-[140px] rcp-flex-shrink-0 rcp-aspect-square rcp-rounded-lg rcp-overflow-hidden rcp-bg-gray-100 [&_svg]:rcp-h-full [&_svg]:rcp-w-full [&_svg]:rcp-object-cover">
+    {{ 'product-apparel-1' | placeholder_svg_tag }}
+  </div>
+  <div class="rcp-flex rcp-flex-col rcp-gap-0.5 rcp-justify-between">
+    <div>
+      <span class="rcp-font-gtAmerica rcp-font-bold rcp-text-base rcp-leading-120 rcp-capitalize rcp-text-primary-base">{{ title | default: 'Light Roast K-Cup' }}</span>
+    </div>
+    <div class="rcp-flex rcp-flex-col rcp-gap-1">
+      <div>
+        <p class="rcp-font-hanleyProSans rcp-font-bold rcp-text-sm rcp-leading-tight rcp-tracking-widest rcp-uppercase rcp-text-primary-base ">Price</p>
+        <span class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">{{ price | default: '$29.95' }}</span>
+      </div>
+      <div>
+        <p class="rcp-font-hanleyProSans rcp-font-bold rcp-text-sm rcp-leading-tight rcp-tracking-widest rcp-uppercase rcp-text-primary-base ">Quantity</p>
+        <span class="rcp-font-gtAmerica rcp-font-normal rcp-text-base rcp-leading-120 rcp-text-primary-base">{{ quantity | default: '01' }}</span>
+      </div>
+    </div>
+  </div>
+</div>
